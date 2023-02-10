@@ -1,0 +1,82 @@
+*{font-family: Arial;  }
+#todolist{background-color: ;}
+#todoTitle{border-radius: 9px;
+    width: 258px;
+    height: 27px;
+}
+#todoDescrip{border-radius: 10px;
+            width: 258px;
+            height: 49px
+}
+#todoDdl{border-radius: 8px;
+         width: 118px;
+         height: 27px;
+}
+ 
+.todo{
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+
+
+}
+.form{    display: flex;
+    flex-direction: column;
+}
+.formContainer {
+    display: none;
+    background-color: #ffff;
+    position: absolute;
+    margin: 0 auto;
+    left: 100px;
+    width: 49%;
+    border-radius: 17px;
+    padding: 17px;
+    box-shadow: 0px 7px 28px -16px black;
+}
+
+#close{ float: right; }
+.page1{    
+	    
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;} 
+.bout{   
+      display: flex;
+      align-items: center;
+      gap: 9px;} 
+.bout2{display: flex;
+    flex-direction: row;
+    justify-content: space-between;}       
+.button2{
+         background-color: #840be3;
+         border: 0px;
+         width: 39px;
+         height: 39px;
+         border-radius: 5px;
+         font-size: 38px;
+         display: flex;
+         align-items: center;
+         color: white;
+         justify-content: center;
+         }    
+.button1{
+    width: 40px;
+    background: linear-gradient(45deg, #0e62af, #1244ed);
+    width: 163px;
+    height: 24px;
+    border: 0;
+    border-radius: 7px;
+    color: white;
+    }              
+.p1{color: #840be3;
+	margin: 0px;
+	font-size: 26px;}         
+.p2{
+    color: #086da6;
+    font-size: 31px;
+    margin: 0px;
+    padding-left: 29px;
+    }
+.p4{color: #840be3;font-size: 34px;margin: 0px;}    

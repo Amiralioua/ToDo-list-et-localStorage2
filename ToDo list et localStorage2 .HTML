@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="stylToDo list 2.css">
+	<title></title>
+</head>
+<body>
+
+	<ul id="todolist" >
+		 
+	</ul>
+	<div class="formContainer">
+	<span id="close">X</span>	
+<form class="form">
+
+    <p class="p4"> Add a new todo </p> 
+	<P class="p3" ><b>Enter your todo title:</b></p>
+	<input id="todoTitle" type="text" name="">
+
+	<p class="p3"><b>Enter your todo description:</b></p>
+	<textarea  id="todoDescrip" name=""> </textarea>   
+
+	<p class="p3"><b>Enter your todo DeadLine:</b></p>
+	<input id="todoDdl" type="date" name="">
+	<div class="bout2">
+		<div> </div>
+	<button class="button1" type="button" onclick="addTodo()">Add and Save</button>  
+
+	</div>
+
+</form>
+
+    </div>
+
+    <div class="page1">
+    <p class="p2" >What are you going to plan?</p>
+    <div class="bout">
+
+    <button  class="button2" onclick="displayForm()">+</button>
+    <p class="p1">Add new</p>
+
+    </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript">
+
+		closeBtn=document.getElementById("close")
+
+	    closeBtn.addEventListener("click",function (){
+	      formContainer=document.getElementsByClassName("formContainer")[0]
+          formContainer.style.display="none"
+          form=document.getElementsByTagName("form")[0]
+          form.reset()
+
+	    })
+
+	
+	function displayForm( ) {
+		form=document.getElementsByClassName("formContainer")[0]
+		 form.style.display ="block"
+		}	
+	 
+	function createTodoObject(title,descrip,ddl) 
+		  {return{title,descrip,ddl}
+		     }  
+	function convertTodoToHtml(todo){
+		title = todo.title
+		descrip= todo.descrip 
+		ddl= todo.ddl
+		     
+	h3 = document.createElement("h3")
+    titleElement=document.createTextNode(title)
+    h3.appendChild(titleElement)
+
+	h4 = document.createElement("h4")
+	descripElement=document.createTextNode(descrip)
+	h4.appendChild(descripElement)
+
+
+	h5 = document.createElement("h5")
+	ddlElement=document.createTextNode(ddl)
+	h5.appendChild(ddlElement)
+
+	todoContainer = document.createElement("li")
+	todoContainer.className="todo"
+
+	todoContainer.appendChild(h3)
+	todoContainer.appendChild(h4)
+	todoContainer.appendChild(h5)
+	return todoContainer
+}
+
+ 
+
+function addTodo(){
+	title=document.getElementById("todoTitle").value
+	descrip=document.getElementById("todoDescrip").value
+	ddl=document.getElementById("todoDdl").value
+    
+
+    todoData=createTodoObject(title,descrip,ddl)
+    console.log("todoData",todoData)   
+    todo= convertTodoToHtml(todoData)
+    todoContainer=document.getElementById("todolist")
+    todoContainer.appendChild(todo)
+
+     
+     localStorage.setItem("todo", JSON.stringify(todoData) )
+
+} 
+ 
+
+
+</script>
+	
+
+</body>
+
+</html>
